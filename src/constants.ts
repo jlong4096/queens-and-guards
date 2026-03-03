@@ -1,4 +1,4 @@
-import type { GamePiece } from './types'
+import type { GamePiece, PieceType } from './types'
 
 export const BOARD_RADIUS = 5
 
@@ -32,6 +32,9 @@ export const BOARD_RADIUS = 5
 //   -4 → idx 11: (4,  1) blue
 //   -6 → idx  9: (5, -1) red
 
+/** Starting-hex lookup — used to render faint outline markers on the board. */
+export const START_POSITIONS: Map<string, PieceType> = new Map()
+
 export const INITIAL_PIECES: GamePiece[] = [
   // ── Queens ──────────────────────────────────────────────
   { id: 'red_queen', type: 'red_queen', q: 0, r: -5 },
@@ -53,3 +56,6 @@ export const INITIAL_PIECES: GamePiece[] = [
   { id: 'bg_l3', type: 'blue_guard', q: 4, r: 1 },   // -4
   { id: 'rg_l3', type: 'red_guard', q: 5, r: -1 },   // -6
 ]
+
+// Populate START_POSITIONS after INITIAL_PIECES is defined
+INITIAL_PIECES.forEach((p) => START_POSITIONS.set(`${p.q},${p.r}`, p.type))
