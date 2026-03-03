@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/constants.ts","./src/main.tsx","./src/types.ts","./src/components/hexboard.tsx","./src/components/pieceicon.tsx","./src/utils/hexgrid.ts"],"version":"5.9.3"}
